@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 2</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Классы</h2>
+            <p>Класс в C# представляет собой шаблон или чертеж для создания объектов. Класс определяет свойства и методы, которые объект будет иметь.</p>
+            <pre><code>
+public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void Introduce()
+    {
+        Console.WriteLine($"Hi, my name is {Name} and I am {Age} years old.");
+    }
+}
+            </code></pre>
+            <p>Объект является экземпляром класса. Создание объекта класса выполняется с помощью ключевого слова <code>new</code>.</p>
+            <pre><code>
+Person person = new Person();
+person.Name = "Alice";
+person.Age = 30;
+person.Introduce();
+            </code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Массивы. Класс Array</h2>
+            <p>Массивы в C# представляют собой коллекции фиксированной длины одного типа данных. Они позволяют хранить несколько значений в одной переменной.</p>
+            <pre><code>
+int[] numbers = new int[5];
+numbers[0] = 1;
+numbers[1] = 2;
+numbers[2] = 3;
+numbers[3] = 4;
+numbers[4] = 5;
+
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}
+            </code></pre>
+            <p>Класс <code>Array</code> предоставляет различные методы и свойства для работы с массивами.</p>
+            <pre><code>
+int[] numbers = { 5, 3, 8, 1, 2 };
+Array.Sort(numbers); // Сортировка массива
+
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}
+
+int index = Array.IndexOf(numbers, 3); // Поиск индекса элемента
+Console.WriteLine("Index of 3: " + index);
+            </code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Символы и строки постоянной длины. Классы String и StringBuilder</h2>
+            <p>В C# символы представлены типом <code>char</code>, который хранит один Unicode символ. Строки представлены классом <code>String</code> и являются неизменяемыми.</p>
+            <pre><code>
+char letter = 'A';
+string greeting = "Hello, World!";
+
+Console.WriteLine(letter);
+Console.WriteLine(greeting);
+            </code></pre>
+            <p>Класс <code>String</code> предоставляет множество методов для работы со строками, такие как конкатенация, сравнение, получение подстрок и т.д.</p>
+            <pre><code>
+string firstName = "John";
+string lastName = "Doe";
+string fullName = firstName + " " + lastName;
+
+Console.WriteLine(fullName);
+Console.WriteLine("Length: " + fullName.Length);
+Console.WriteLine("Substring: " + fullName.Substring(0, 4));
+            </code></pre>
+            <p>Для создания и манипуляции изменяемыми строками используется класс <code>StringBuilder</code>. Он эффективнее для частых операций изменения строк.</p>
+            <pre><code>
+StringBuilder sb = new StringBuilder("Hello");
+sb.Append(", World!");
+
+Console.WriteLine(sb.ToString());
+
+sb.Replace("World", "C#");
+Console.WriteLine(sb.ToString());
+            </code></pre>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

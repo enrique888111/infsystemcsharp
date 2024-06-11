@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по 3 разделу</title>
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #343a40;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-check-label {
+            color: #343a40;
+        }
+        .form-check-input {
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #d6796d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #eba869;
+        }
+        .return-button {
+            background-color: rgb(255, 153, 128);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .return-button:hover {
+            background-color: #ff56226b;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <h1>Тест по 3 разделу</h1>
+        <form id="nameForm">
+            <div class="form-group">
+                <label for="fullName">Введите ФИО:</label>
+                <input type="text" id="fullName" name="fullName" required class="form-control">
+                <small id="nameFeedback" class="form-text"></small>
+            </div>
+            <button type="button" class="btn" onclick="startQuiz()">Начать тест</button>
+        </form>
+        <form id="quizForm" style="display:none;">
+            <div class="form-group">
+                <h2 id="userName"></h2> 
+       
+                <label>1. Какие основные виды файлов представлены при работе с файлами в C#?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">Текстовые, бинарные, JSON, XML, конфигурационные, ресурсы и встроенные ресурсы, изображения и мультимедиа файлы</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b"> Текстовые, аудио, видео, изображения, XML, JSON</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c"> Текстовые, бинарные, изображения, JSON, XML</label>
+                </div>
+                <small id="feedback1" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>2. Для работы с какими файлами используются классы System.IO.File и System.IO.StreamReader в C#?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2a" value="a">
+                    <label class="form-check-label" for="q2a"> Текстовые файлы</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2b" value="b">
+                    <label class="form-check-label" for="q2b">Бинарные файлы</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2c" value="c">
+                    <label class="form-check-label" for="q2c"> XML файлы</label>
+                </div>
+                <small id="feedback2" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>3. Какой формат используется для сериализации и десериализации структурированных данных в C#?
+                </label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3a" value="a">
+                    <label class="form-check-label" for="q3a"> XML</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3b" value="b">
+                    <label class="form-check-label" for="q3b">JSON</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3c" value="c">
+                    <label class="form-check-label" for="q3c">TXT</label>
+                </div>
+                <small id="feedback3" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>4. Какой формат файлов часто используется для хранения настроек или параметров приложения в .NET Framework?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4a" value="a">
+                    <label class="form-check-label" for="q4a"> XML</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4b" value="b">
+                    <label class="form-check-label" for="q4b">JSON</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4c" value="c">
+                    <label class="form-check-label" for="q4c">Конфигурационные файлы</label>
+                </div>
+                <small id="feedback4" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>5. Какая библиотека в C# предоставляет возможность создавать и компилировать код на лету?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5a" value="a">
+                    <label class="form-check-label" for="q5a"> Roslyn</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5b" value="b">
+                    <label class="form-check-label" for="q5b">System.Xml</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5c" value="c">
+                    <label class="form-check-label" for="q5c">Newtonsoft.Json</label>
+                </div>
+                <small id="feedback5" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>6. Что такое обобщения в C# и какую цель они преследуют?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question6" id="q6a" value="a">
+                    <label class="form-check-label" for="q6a">Обобщения предоставляют возможность создавать классы и методы, которые могут работать с различными типами данных, обеспечивая безопасность типов во время компиляции</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question6" id="q6b" value="b">
+                    <label class="form-check-label" for="q6b">Обобщения предоставляют возможность создавать классы и методы, которые могут работать только с одним типом данных</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question6" id="q6c" value="c">
+                    <label class="form-check-label" for="q6c">Обобщения предоставляют возможность создавать классы и методы, которые могут работать с различными типами данных, но не обеспечивают безопасность типов во время компиляции</label>
+                </div>
+                <small id="feedback6" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>7. Что такое обобщенные классы в C#?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question7" id="q7a" value="a">
+                    <label class="form-check-label" for="q7a">Это классы, которые могут быть параметризованы типами данных</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question7" id="q7b" value="b">
+                    <label class="form-check-label" for="q7b">Это классы, которые могут быть параметризованы только целочисленными типами данных</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question7" id="q7c" value="c">
+                    <label class="form-check-label" for="q7c">Это классы, которые могут быть параметризованы только строковыми типами данных</label>
+                </div>
+                <small id="feedback7" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>8. Что представляет собой иерархия обобщенных классов в C#?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question8" id="q8a" value="a">
+                    <label class="form-check-label" for="q8a">Это последовательность классов, которые связаны отношением наследования и используют обобщения</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question8" id="q8b" value="b">
+                    <label class="form-check-label" for="q8b">Это последовательность классов, которые могут работать только с одним типом данных</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question8" id="q8c" value="c">
+                    <label class="form-check-label" for="q8c"> Это последовательность классов, которые используют обобщения, но не связаны отношением наследования</label>
+                </div>
+                <small id="feedback8" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>9. Какие преимущества обобщенных коллекций по сравнению с необобщенными?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question9" id="q9a" value="a">
+                    <label class="form-check-label" for="q9a">Обобщенные коллекции обеспечивают безопасность типов во время компиляции и не требуют явного приведения типов</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question9" id="q9b" value="b">
+                    <label class="form-check-label" for="q9b">Обобщенные коллекции требуют явного приведения типов и могут привести к ошибкам времени выполнения</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question9" id="q9c" value="c">
+                    <label class="form-check-label" for="q9c">Обобщенные коллекции не обеспечивают безопасность типов во время компиляции, но работают быстрее</label>
+                </div>
+                <small id="feedback9" class="form-text"></small>
+            </div>
+
+            <div style="text-align: center;">
+                <span id="score" style="font-weight: bold;"></span>
+                <button type="button" class="btn" onclick="showResults()">Показать результаты</button>
+                <button type="button" class="btn" onclick="saveResults()">Скачать результаты</button>
+            </div>
+        </form>
+        <button class="return-button">Вернуться на вкладку "Тесты"</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            showResults();
+        });
+
+        function startQuiz() {
+            const nameInput = document.getElementById("fullName");
+            const nameFeedback = document.getElementById("nameFeedback");
+            if (nameInput.value.trim() === "") {
+                nameFeedback.textContent = "Пожалуйста, введите ваше ФИО.";
+                nameFeedback.style.color = "red";
+            } else {
+                nameFeedback.textContent = "";
+                document.getElementById("nameForm").style.display = "none";
+                document.getElementById("quizForm").style.display = "block";
+                document.getElementById("userName").textContent = nameInput.value.trim();
+            }
+        }
+
+        function showResults() {
+            const answers = {
+                question1: 'a',
+                question2: 'a',
+                question3: 'b',
+                question4: 'c',
+                question5: 'a',
+                question6: 'a',
+                question7: 'a',
+                question8: 'a',
+                question9: 'a'
+            };
+
+            let totalScore = 0;
+            let results = [];
+            for (const [question, correctAnswer] of Object.entries(answers)) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                const feedback = document.getElementById(`feedback${question.slice(-1)}`);
+
+                if (selectedOption) {
+                    if (selectedOption.value === correctAnswer) {
+                        feedback.textContent = 'Правильно';
+                        feedback.classList.add('correct');
+                        feedback.classList.remove('incorrect');
+                        results.push(`Вопрос ${question.slice(-1)}: Правильно`);
+                        totalScore++;
+                    } else {
+                        feedback.textContent = 'Неправильно';
+                        feedback.classList.add('incorrect');
+                        feedback.classList.remove('correct');
+                        results.push(`Вопрос ${question.slice(-1)}: Неправильно`);
+                    }
+                } else {
+                    feedback.textContent = 'Вы не выбрали ответ';
+                    feedback .textContent = 'Вы не выбрали ответ';
+                    feedback.classList.add('incorrect');
+                    feedback.classList.remove('correct');
+                    results.push(`Вопрос ${question.slice(-1)}: Вы не выбрали ответ`);
+                }
+            }
+
+            const score = Math.round((totalScore / 9) * 10);
+            document.getElementById('score').textContent = `Оценка: ${score}`;
+
+            return results;
+        }
+
+        function saveResults() {
+            const results = showResults();
+            const score = document.getElementById('score').textContent;
+            const userName = document.getElementById('userName').textContent;
+            let resultHtml = `
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Результаты теста</title>
+                </head>
+                <body>
+                    <h1>Результаты теста</h1>
+                    <h2>Имя пользователя: ${userName}</h2>
+                    <ul>
+            `;
+
+            results.forEach(result => {
+                resultHtml += `<li>${result}</li>`;
+            });
+
+            resultHtml += `
+                    </ul>
+                    <p>${score}</p>
+                </body>
+                </html>
+            `;
+
+            const blob = new Blob([resultHtml], { type: 'application/msword' });
+            saveAs(blob, 'Результаты_теста.doc');
+        }
+
+        document.querySelector('.return-button').addEventListener('click', function() {
+            window.location.href = 'indextesti.html';
+        });
+    </script>
+</body>
+</html>

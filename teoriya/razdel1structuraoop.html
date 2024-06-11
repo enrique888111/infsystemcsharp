@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 1</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Классы и объекты</h2>
+            <p>Классы и объекты являются основными строительными блоками объектно-ориентированного программирования (ООП). В C# классы определяют типы объектов, а объекты являются экземплярами классов.</p>
+            <p>Класс — это шаблон для создания объектов, который определяет их поведение (методы) и состояние (данные, переменные).</p>
+            <pre>
+<code>public class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public void Introduce()
+    {
+        Console.WriteLine($"Hi, my name is {Name} and I am {Age} years old.");
+    }
+}</code>
+            </pre>
+            <p>Объект — это экземпляр класса, который имеет конкретное состояние и поведение.</p>
+            <pre>
+<code>Person person = new Person();
+person.Name = "Alice";
+person.Age = 30;
+person.Introduce();</code>
+            </pre>
+            <p>Инкапсуляция объединяет данные и методы, которые работают с этими данными, в единый компонент, называемый классом. Модификаторы доступа (например, `private`, `public`, `protected`, `internal`) контролируют доступ к членам класса.</p>
+            <pre>
+<code>public class BankAccount
+{
+    private decimal balance;
+
+    public void Deposit(decimal amount)
+    {
+        balance += amount;
+    }
+
+    public decimal GetBalance()
+    {
+        return balance;
+    }
+}</code>
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>Иерархия классов</h2>
+            <p>Иерархия классов в C# позволяет создавать новые классы на основе существующих, что способствует повторному использованию кода и упрощает его структуру. Это достигается с помощью наследования.</p>
+            <p>Наследование позволяет создавать новые классы (наследники) на основе существующих (родителей), причем класс-наследник получает все свойства и методы родительского класса, а также может добавлять свои собственные или переопределять существующие.</p>
+            <pre>
+<code>public class Animal
+{
+    public string Name { get; set; }
+
+    public void Eat()
+    {
+        Console.WriteLine($"{Name} is eating.");
+    }
+}
+
+public class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine($"{Name} is barking.");
+    }
+}</code>
+            </pre>
+            <p>Полиморфизм позволяет объектам с одинаковым интерфейсом иметь различную реализацию. Это позволяет использовать один и тот же интерфейс для работы с разными типами объектов, что делает код более гибким и универсальным.</p>
+            <pre>
+<code>public class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("Some sound...");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+
+public class Cat : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Meow");
+    }
+}</code>
+            </pre>
+            <p>Таким образом, полиморфизм позволяет обращаться к объектам через интерфейс базового класса, но при этом вызывать методы производных классов.</p>
+            <pre>
+<code>Animal myDog = new Dog();
+Animal myCat = new Cat();
+
+myDog.MakeSound(); // Output: Bark
+myCat.MakeSound(); // Output: Meow</code>
+            </pre>
+        </div>
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

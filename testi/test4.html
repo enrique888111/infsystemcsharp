@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест по 4 разделу</title>
+    <style>
+        #feedback10 {
+    color: #343a40;
+    margin-top: 5px;
+    display: block; 
+}
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #343a40;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-check-label {
+            color: #343a40;
+        }
+        .form-check-input {
+            margin-right: 10px;
+        }
+        .btn {
+            background-color: #d6796d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        .btn:hover {
+            background-color: #eba869;
+        }
+        .return-button {
+            background-color: rgb(255, 153, 128);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .return-button:hover {
+            background-color: #ff56226b;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <h1>Тест по 4 разделу</h1>
+        <form id="nameForm">
+            <div class="form-group">
+                <label for="fullName">Введите ФИО:</label>
+                <input type="text" id="fullName" name="fullName" required class="form-control">
+                <small id="nameFeedback" class="form-text"></small>
+            </div>
+            <button type="button" class="btn" onclick="startQuiz()">Начать тест</button>
+        </form>
+        <form id="quizForm" style="display:none;">
+            <div class="form-group">
+                <h2 id="userName"></h2> 
+       
+                <label>1. Что такое WinForms и для чего оно используется?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1a" value="a">
+                    <label class="form-check-label" for="q1a">Фреймворк для создания кроссплатформенных приложений</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1b" value="b">
+                    <label class="form-check-label" for="q1b"> Инструмент для создания анимации и графики</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question1" id="q1c" value="c">
+                    <label class="form-check-label" for="q1c"> Технология для создания GUI на платформе Windows с использованием C#</label>
+                </div>
+                <small id="feedback1" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>2. Какие основные преимущества предоставляет WPF для создания GUI на платформе Windows?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2a" value="a">
+                    <label class="form-check-label" for="q2a"> Ограниченная графика и анимация</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2b" value="b">
+                    <label class="form-check-label" for="q2b">Более гибкий и масштабируемый подход к разработке интерфейсов</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question2" id="q2c" value="c">
+                    <label class="form-check-label" for="q2c"> Поддержка только Windows</label>
+                </div>
+                <small id="feedback2" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>3. Что такое Gtk# и для каких целей его можно использовать?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3a" value="a">
+                    <label class="form-check-label" for="q3a">  Библиотека для работы с базами данных</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3b" value="b">
+                    <label class="form-check-label" for="q3b">Порт библиотеки GTK+ для языка C#, для создания кроссплатформенных приложений с графическим интерфейсом</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question3" id="q3c" value="c">
+                    <label class="form-check-label" for="q3c">Фреймворк для создания игр</label>
+                </div>
+                <small id="feedback3" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>4. Какие платформы поддерживает Avalonia и на каких языках программирования он основан?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4a" value="a">
+                    <label class="form-check-label" for="q4a">  Поддерживает только Windows и macOS, основан на Java</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4b" value="b">
+                    <label class="form-check-label" for="q4b">Поддерживает Windows, macOS и Linux, основан на XAML и использует C#</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question4" id="q4c" value="c">
+                    <label class="form-check-label" for="q4c">Поддерживает Android и iOS, основан на Python</label>
+                </div>
+                <small id="feedback4" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>5. Для каких платформ Uno Platform позволяет создавать кроссплатформенные приложения?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5a" value="a">
+                    <label class="form-check-label" for="q5a"> Только для Windows</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5b" value="b">
+                    <label class="form-check-label" for="q5b">Для Windows, Android, iOS, WebAssembly и других платформ</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question5" id="q5c" value="c">
+                    <label class="form-check-label" for="q5c">Только для Linux</label>
+                </div>
+                <small id="feedback5" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>6. Какие библиотеки и фреймворки в C# можно использовать для работы с графикой и анимацией?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question6" id="q6a" value="a">
+                    <label class="form-check-label" for="q6a"> WPF, DirectX, SkiaSharp</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question6" id="q6b" value="b">
+                    <label class="form-check-label" for="q6b">WinForms, Unity3D, ADO.NET</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question6" id="q6c" value="c">
+                    <label class="form-check-label" for="q6c">Avalonia, Gtk#, Uno Platform</label>
+                </div>
+                <small id="feedback6" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>7. Какие основные шаги для работы с базами данных с использованием ADO.NET?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question7" id="q7a" value="a">
+                    <label class="form-check-label" for="q7a">Подключение к базе данных, выполнение запросов, чтение данных, использование адаптеров данных и закрытие ресурсов</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question7" id="q7b" value="b">
+                    <label class="form-check-label" for="q7b"> Загрузка данных, обновление базы данных, закрытие соединения</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question7" id="q7c" value="c">
+                    <label class="form-check-label" for="q7c">Создание таблиц, добавление данных, удаление таблиц</label>
+                </div>
+                <small id="feedback7" class="form-text"></small>
+            </div>
+
+            <div class="form-group">
+                <label>8. Что такое ASP.NET и для чего оно используется?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question8" id="q8a" value="a">
+                    <label class="form-check-label" for="q8a"> Фреймворк для разработки настольных приложений</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question8" id="q8b" value="b">
+                    <label class="form-check-label" for="q8b"> Фреймворк для разработки веб-приложений</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question8" id="q8c" value="c">
+                    <label class="form-check-label" for="q8c"> Инструмент для создания анимации и графики</label>
+                </div>
+                <small id="feedback8" class="form-text"></small>
+            </div>
+    
+            <div class="form-group">
+                <label>9. Какие основные преимущества предоставляет Xamarin для разработки мобильных приложений?</label><br>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question9" id="q9a" value="a">
+                    <label class="form-check-label" for="q9a"> Поддержка только Android</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question9" id="q9b" value="b">
+                    <label class="form-check-label" for="q9b"> Позволяет разрабатывать кроссплатформенные мобильные приложения с общим кодом на C#</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="question9" id="q9c" value="c">
+                    <label class="form-check-label" for="q9c"> Основан на Java и поддерживает только iOS</label>
+                </div>
+                <small id="feedback9" class="form-text"></small>
+            </div>
+
+            <div style="text-align: center;">
+                <span id="score" style="font-weight: bold;"></span>
+                <button type="button" class="btn" onclick="showResults()">Показать результаты</button>
+                <button type="button" class="btn" onclick="saveResults()">Скачать результаты</button>
+            </div>
+        </form>
+        <button class="return-button">Вернуться на вкладку "Тесты"</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            showResults();
+        });
+
+        function startQuiz() {
+            const nameInput = document.getElementById("fullName");
+            const nameFeedback = document.getElementById("nameFeedback");
+            if (nameInput.value.trim() === "") {
+                nameFeedback.textContent = "Пожалуйста, введите ваше ФИО.";
+                nameFeedback.style.color = "red";
+            } else {
+                nameFeedback.textContent = "";
+                document.getElementById("nameForm").style.display = "none";
+                document.getElementById("quizForm").style.display = "block";
+                document.getElementById("userName").textContent = nameInput.value.trim();
+            }
+        }
+
+        function showResults() {
+    const answers = {
+        question1: 'c',
+        question2: 'b',
+        question3: 'b',
+        question4: 'c',
+        question5: 'b',
+        question6: 'a',
+        question7: 'a',
+        question8: 'b',
+        question9: 'b'
+    };
+
+    let totalScore = 0;
+    let results = [];
+    for (const [question, correctAnswer] of Object.entries(answers)) {
+        const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+        const feedback = document.getElementById(`feedback${question.slice(-1)}`);
+
+        if (selectedOption) {
+            if (selectedOption.value === correctAnswer) {
+                feedback.textContent = 'Правильно';
+                feedback.classList.add('correct');
+                feedback.classList.remove('incorrect');
+                results.push(`Вопрос ${question.slice(-1)}: Правильно`);
+                totalScore++;
+            } else {
+                feedback.textContent = 'Неправильно';
+                feedback.classList.add('incorrect');
+                feedback.classList.remove('correct');
+                results.push(`Вопрос ${question.slice(-1)}: Неправильно`);
+            }
+        } else {
+            feedback.textContent = 'Вы не выбрали ответ';
+            feedback.classList.add('incorrect');
+            feedback.classList.remove('correct');
+            results.push(`Вопрос ${question.slice(-1)}: Вы не выбрали ответ`);
+        }
+    }
+
+    const score = Math.round((totalScore / 10) * 10);
+    document.getElementById('score').textContent = `Оценка: ${score}`;
+
+    return results;
+}
+
+
+        function saveResults() {
+            const results = showResults();
+            const score = document.getElementById('score').textContent;
+            const userName = document.getElementById('userName').textContent;
+            let resultHtml = `
+                <html>
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Результаты теста</title>
+                </head>
+                <body>
+                    <h1>Результаты теста</h1>
+                    <h2>Имя пользователя: ${userName}</h2>
+                    <ul>
+            `;
+
+            results.forEach(result => {
+                resultHtml += `<li>${result}</li>`;
+            });
+
+            resultHtml += `
+                    </ul>
+                    <p>${score}</p>
+                </body>
+                </html>
+            `;
+
+            const blob = new Blob([resultHtml], { type: 'application/msword' });
+            saveAs(blob, 'Результаты_теста.doc');
+        }
+
+        document.querySelector('.return-button').addEventListener('click', function() {
+            window.location.href = 'indextesti.html';
+        });
+    </script>
+</body>
+</html>

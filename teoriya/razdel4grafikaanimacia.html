@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 4</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Работа с графикой и анимацией</h2>
+            <p>В C# существует несколько способов работы с графикой и создания анимации, включая использование библиотек и фреймворков.</p>
+            <p>Для работы с графикой и анимацией в C# часто используются следующие инструменты:</p>
+            <ul>
+                <li><strong>GDI+ (Graphics Device Interface)</strong>: Это набор API для работы с графикой, который входит в состав Windows API. С его помощью можно создавать простые изображения, рисовать фигуры, текст и применять простейшие анимационные эффекты.</li>
+                <li><strong>Windows Presentation Foundation (WPF)</strong>: WPF предоставляет более мощные средства для работы с графикой и создания анимации, используя декларативный язык разметки XAML и поддерживаемый .NET Framework.</li>
+                <li><strong>OpenGL и DirectX</strong>: Это низкоуровневые API для работы с 2D и 3D графикой соответственно. Они обеспечивают высокую производительность и широкие возможности для создания сложных анимаций и визуализаций.</li>
+                <li><strong>Unity Engine</strong>: Unity - это мощный многоплатформенный движок для создания игр и интерактивных приложений. Он предоставляет готовые инструменты для работы с графикой, анимацией, физикой и многими другими аспектами разработки игр.</li>
+            </ul>
+            <p>Пример использования GDI+ для создания простой анимации:</p>
+            <pre>
+<code>using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace SimpleAnimation
+{
+    public class Program : Form
+    {
+        private Timer timer = new Timer();
+        private int x = 0;
+        private int y = 0;
+
+        public Program()
+        {
+            timer.Interval = 50; // 50 milliseconds
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            x += 5;
+            y += 5;
+
+            if (x > ClientSize.Width)
+                x = 0;
+            if (y > ClientSize.Height)
+                y = 0;
+
+            Invalidate();
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            Graphics g = e.Graphics;
+            g.Clear(Color.White);
+            g.FillEllipse(Brushes.Red, x, y, 50, 50);
+        }
+
+        static void Main()
+        {
+            Application.Run(new Program());
+        }
+    }
+}</code>
+            </pre>
+            <p>Этот пример создает простую анимацию - движущийся круг, используя GDI+ и Windows Forms.</p>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

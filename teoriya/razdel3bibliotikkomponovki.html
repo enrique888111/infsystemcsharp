@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 3</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Библиотеки динамической компоновки</h2>
+            <p>Библиотеки динамической компоновки (DLL) в C# представляют собой сборки, содержащие код, который может быть загружен и использован во время выполнения программы.</p>
+            <p>Основные преимущества использования DLL включают:</p>
+            <ul>
+                <li>Переиспользование кода: код, написанный один раз, может быть использован в различных приложениях без необходимости повторного написания.</li>
+                <li>Облегчение обновлений: если внесены изменения в DLL, они автоматически применяются ко всем приложениям, использующим эту DLL, без необходимости перекомпиляции приложений.</li>
+                <li>Уменьшение размера исполняемого файла: разделение кода на отдельные DLL помогает уменьшить размер исполняемого файла и ускорить загрузку приложения.</li>
+                <li>Изоляция функциональности: DLL позволяют разделять функциональность приложения на отдельные компоненты, что облегчает его управление и развитие.</li>
+            </ul>
+            <p>В C# библиотеки динамической компоновки могут быть созданы с помощью инструментов, таких как Visual Studio или .NET SDK, и затем загружены и использованы в приложении по мере необходимости.</p>
+            <p>Пример использования библиотеки динамической компоновки:</p>
+            <pre>
+<code>// Создание объекта из DLL
+MyLibrary.MyClass myObject = new MyLibrary.MyClass();
+
+// Вызов метода из DLL
+myObject.MyMethod();</code>
+            </pre>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

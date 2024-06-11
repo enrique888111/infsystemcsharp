@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теория</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('fonteoriya.jpg'); 
+            background-attachment: fixed;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contents {
+            margin-bottom: 30px;
+            text-align: left;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 20px;
+            grid-row-gap: 20px;
+            justify-items: center;
+            margin-top: 20px; 
+        }
+
+        .contents button {
+            display: block;
+            width: 100%;
+            padding: 7px 65px; 
+            background-color: #964f4f;
+            color: #fff;
+            border: none; 
+            border-radius: 50px; 
+            font-size: 20px; 
+            font-weight: bold;
+            margin-bottom: 10px; 
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            text-align: center;
+        }
+
+        .contents button.header {
+            padding: 15px 25px; 
+            font-size: 24px;
+        }
+
+        .contents button:hover {
+            background-color: #582e2edc;
+        }
+
+        .return-button {
+            padding: 15px 25px; 
+            font-size: 24px; 
+        }
+
+        .return-button:hover {
+            background-color: #ff0000d5;
+        }
+
+        .search-container {
+            margin-bottom: 1px;
+            text-align: center;
+        }
+
+        #searchInput {
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 20px;
+            width: 20%;
+            margin-bottom: 1px; 
+        }
+
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 20px;
+            background-color: #d40058e3;
+            font-size: 30px; 
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .return-button:hover {
+            background-color: #ff0000d5;
+        }
+
+        .razdel1-content {
+            grid-column: 1;
+            margin-left: -10px; 
+        }
+
+        .razdel2-content {
+            grid-column: 1;
+            margin-left: -10px; 
+        }
+
+        .razdel3-content {
+    grid-column: 1;
+    margin-left: -10px; 
+}
+
+        .razdel4-content {
+            grid-column: 1;
+            margin-left: -10px; 
+            
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="return-button-container">
+        <button class="return-button" onclick="window.location.href = '../index.html';">Вернуться на главную</button>
+    </div>
+
+    <div class="container">
+        <div class="search-container"> 
+            <input type="text" id="searchInput" placeholder="Поиск по разделам..." oninput="searchSections()">
+        </div>
+        <div class="contents"> 
+            <button class="header" onclick=>"РАЗДЕЛ 1"</button>
+            <button class="header" onclick=>"РАЗДЕЛ 2"</button>
+            <button class="header" onclick=>"РАЗДЕЛ 3"</button>
+            <button class="header" onclick=>"РАЗДЕЛ 4"</button>
+            <div class="container">
+                <div class="contents"> 
+                    <button class="razdel1-content" onclick="openNewTab('razdel1oop')">Понятие ООП</button>
+                    <button class="razdel1-content" onclick="openNewTab('razdel1structuraoop')">Структура ООП</button>
+                    <button class="razdel1-content" onclick="openNewTab('razdel1metodiiatribyti')">Методы и атрибуты</button>
+                    <button class="razdel1-content" onclick="openNewTab('razdel1nasledovanieipolimorfizm')">Наследование и полиморфизм</button>
+                    <button class="razdel1-content" onclick="openNewTab('razdel1sredarazrabide')">Интегрированная среда разработки (IDE)</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="contents"> 
+                    <button class="razdel2-content" onclick="openNewTab('razdel2systemtypesprogramsbork')">Система типов, структура программы и сборки</button>
+                    <button class="razdel2-content" onclick="openNewTab('razdel2operatorprocedurfunc')">Операторы, процедуры и функции</button>
+                    <button class="razdel2-content" onclick="openNewTab('razdel2klassmasivestroki')">Классы, массивы и строки</button>
+                    <button class="razdel2-content" onclick="openNewTab('razdel2regsstructotnklass')">Регулярные выражения, структуры данных и отношения между классами</button>
+                    <button class="razdel2-content" onclick="openNewTab('razdel2interfeisobrabotiskluchsit')">Интерфейсы и обработка исключительных ситуаций</button>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="contents"> 
+                    <button class="razdel3-content" onclick="openNewTab('razdel3failseryliziaciya')">Файлы и сериализация</button>
+                    <button class="razdel3-content" onclick="openNewTab('razdel3bibliotikkomponovki')">Библиотеки динамической компоновки</button>
+                    <button class="razdel3-content" onclick="openNewTab('razdel3oboshiniyaicollections')">Обобщения и коллекции</button>
+                    <button class="razdel3-content" onclick="openNewTab('razdel3rabotaxmlmogopotoc')">Работа с XML и многопоточность</button>
+                    <button class="razdel3-content" onclick="openNewTab('razdel3paralelprogramirovanie')">Параллельное программирование</button>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="contents"> 
+                    <button class="razdel4-content" onclick="openNewTab('razdel4prilojgrapinerfaicegui')">Приложения с графическим пользовательским интерфейсом (GUI)</button>
+                    <button class="razdel4-content" onclick="openNewTab('razdel4grafikaanimacia')">Работа с графикой и анимацией</button>
+                    <button class="razdel4-content" onclick="openNewTab('razdel4rabotasbd')">Работа с базами данных (ADO.NET)</button>
+                    <button class="razdel4-content" onclick="openNewTab('razdel4razverovaniewindowspril')">Развертывание Windows-приложений</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="contents">
+            <button>ПРОВЕРКА ЗНАНИЙ ПО ТЕОРИИ :</button>
+            <button onclick="openNewTab('../testi/indextesti')">ТЕСТЫ</button>
+        </div>
+    </div>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+        function openNewTab(url) {
+            window.open(url + '.html', '_blank');
+        }
+
+        function searchSections() {
+            var searchText = document.getElementById('searchInput').value.toLowerCase();
+
+            var sectionButtons = document.querySelectorAll('.contents button');
+
+            sectionButtons.forEach(function(button) {
+                var buttonText = button.textContent.toLowerCase();
+                if (buttonText.includes(searchText)) {
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+        }
+        
+    </script>
+</body>
+</html>
+

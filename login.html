@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма входа</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #ff0000;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #a10000;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Вход</h2>
+        <form action="#" method="post" onsubmit="handleLoginFormSubmit(event)">
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="submit" value="Войти">
+        </form>
+
+        <h2>Регистрация</h2>
+        <form action="#" method="post" onsubmit="register(event)">
+            <input type="text" id="registerUsername" placeholder="Имя пользователя" required>
+            <input type="password" id="registerPassword" placeholder="Пароль" required>
+            <input type="password" id="confirmPassword" placeholder="Подтвердите пароль" required>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+        
+    </div>
+
+    <script>
+   function handleLoginFormSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const username = form.username.value;
+    const password = form.password.value;
+
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    const user = users.find(user => user.username === username);
+
+    if (!user) {
+        alert('Пользователь с таким именем не существует.');
+        return;
+    }
+
+    if (user.password !== password) {
+        alert('Неверный пароль.');
+        return;
+    }
+
+    saveCredentials(username, user.userId);
+    window.location.href = 'index.html';
+}
+
+
+        function saveCredentials(username, userId) {
+            localStorage.setItem('username', username);
+            localStorage.setItem('userId', userId);
+        
+            localStorage.setItem('currentUser', JSON.stringify({ username }));
+        }
+
+        function register(event) {
+    event.preventDefault();
+    const username = document.getElementById('registerUsername').value;
+    const password = document.getElementById('registerPassword').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (!username || !password || !confirmPassword) {
+        alert('Пожалуйста, заполните все поля.');
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert('Пароли не совпадают.');
+        return;
+    }
+
+    let users = JSON.parse(localStorage.getItem('users')) || [];
+
+    const existingUser = users.find(user => user.username === username);
+    if (existingUser) {
+        alert('Пользователь с таким именем уже существует.');
+        return;
+    }
+
+    const newUser = { username, password };
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users)); 
+
+    saveCredentials(username, users.length);
+    displayUserInfo(username);
+
+    alert('Регистрация завершена!');
+    window.location.href = 'index.html';
+}
+
+
+        function displayUserInfo(username) {
+            const userInfo = document.getElementById('userInfo');
+            if (userInfo) {
+                if (username) {
+                    userInfo.textContent = `Вы вошли под именем: ${username}`;
+                } else {
+                    userInfo.textContent = 'Вы не вошли в систему';
+                }
+            } else {
+                console.error('Элемент userInfo не найден на странице.');
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userInfo = document.getElementById('userInfo');
+            
+            if (currentUser) {
+                userInfo.textContent = `Вы вошли под именем: ${currentUser.username}`;
+            } else {
+                userInfo.textContent = 'Вы не вошли в систему';
+            }
+        });
+    </script>
+</body>
+</html>

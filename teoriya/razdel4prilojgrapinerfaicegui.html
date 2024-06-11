@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 4</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Приложения с графическим пользовательским интерфейсом (GUI)</h2>
+            <p>Создание приложений с графическим пользовательским интерфейсом (GUI) в C# обычно осуществляется с использованием Windows Forms или WPF (Windows Presentation Foundation).</p>
+            <p>Windows Forms предоставляет простой способ создания классических приложений с GUI, используя компоненты, такие как окна, кнопки, текстовые поля и т. д.</p>
+            <p>Пример создания простого приложения с использованием Windows Forms:</p>
+            <pre>
+<code>using System;
+using System.Windows.Forms;
+
+namespace MyFirstApp
+{
+    public class Program : Form
+    {
+        public Program()
+        {
+            Button button = new Button();
+            button.Text = "Click me";
+            button.Click += (sender, e) =>
+            {
+                MessageBox.Show("Button clicked!");
+            };
+
+            Controls.Add(button);
+        }
+
+        static void Main()
+        {
+            Application.Run(new Program());
+        }
+    }
+}</code>
+            </pre>
+            <p>WPF обеспечивает более гибкий и мощный подход к созданию приложений с GUI, используя декларативный язык разметки XAML (eXtensible Application Markup Language).</p>
+            <p>Пример создания простого приложения с использованием WPF:</p>
+            <pre>
+<code>&lt;Window x:Class="MyWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800"&gt;
+    &lt;Grid&gt;
+        &lt;Button Content="Click me" HorizontalAlignment="Center" VerticalAlignment="Center" Click="Button_Click"/&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;</code>
+            </pre>
+            <pre>
+<code>using System.Windows;
+
+namespace MyWpfApp
+{
+    public partial class MainWindow : Window
+    {
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Button clicked!");
+        }
+    }
+}</code>
+            </pre>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

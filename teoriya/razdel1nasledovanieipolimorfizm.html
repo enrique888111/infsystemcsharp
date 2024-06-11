@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 1</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Принцип наследования</h2>
+            <p>Наследование - один из ключевых принципов объектно-ориентированного программирования (ООП), который позволяет создавать новые классы на основе уже существующих. Наследование позволяет повторно использовать код, упрощать его и создавать более сложные структуры.</p>
+            <p>В C# наследование достигается с помощью ключевого слова <code> : </code>. Новый класс (наследник) получает все свойства и методы базового класса (родителя).</p>
+            <p>Пример базового класса и класса-наследника:</p>
+            <pre>
+<code>public class Animal
+{
+    public string Name { get; set; }
+
+    public void Eat()
+    {
+        Console.WriteLine($"{Name} is eating.");
+    }
+}
+
+public class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine($"{Name} is barking.");
+    }
+}</code>
+            </pre>
+            <p>В этом примере класс <code>Dog</code> наследует свойства и методы класса <code>Animal</code> и добавляет собственный метод <code>Bark</code>.</p>
+        </div>
+
+        <div class="section">
+            <h2>Полиморфизм в ООП</h2>
+            <p>Полиморфизм - это принцип ООП, который позволяет использовать объекты разных классов с единым интерфейсом. Это означает, что один интерфейс может быть использован для работы с объектами разных типов.</p>
+            <p>В C# полиморфизм достигается через переопределение методов в наследуемых классах с использованием ключевого слова <code>override</code> и виртуальных методов, определенных в базовом классе с использованием ключевого слова <code>virtual</code>.</p>
+            <p>Пример полиморфизма:</p>
+            <pre>
+<code>public class Animal
+{
+    public virtual void MakeSound()
+    {
+        Console.WriteLine("Some sound...");
+    }
+}
+
+public class Dog : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Bark");
+    }
+}
+
+public class Cat : Animal
+{
+    public override void MakeSound()
+    {
+        Console.WriteLine("Meow");
+    }
+}</code>
+            </pre>
+            <p>Использование полиморфизма:</p>
+            <pre>
+<code>Animal myDog = new Dog();
+Animal myCat = new Cat();
+
+myDog.MakeSound(); // Output: Bark
+myCat.MakeSound(); // Output: Meow</code>
+            </pre>
+            <p>В этом примере метод <code>MakeSound</code> переопределен в классах <code>Dog</code> и <code>Cat</code>. При вызове метода <code>MakeSound</code> у объектов типа <code>Animal</code>, но созданных как <code>Dog</code> и <code>Cat</code>, вызываются соответствующие переопределенные методы.</p>
+        </div>
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

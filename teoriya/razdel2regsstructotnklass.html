@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 2</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Регулярные выражения</h2>
+            <p>Регулярные выражения (Regex) используются для поиска и манипуляции строками. В C# для работы с регулярными выражениями используется пространство имен <code>System.Text.RegularExpressions</code>.</p>
+            <pre><code>
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "Hello, my phone number is 123-456-7890.";
+        string pattern = @"\d{3}-\d{3}-\d{4}";
+        Match match = Regex.Match(input, pattern);
+
+        if (match.Success)
+        {
+            Console.WriteLine("Found phone number: " + match.Value);
+        }
+    }
+}
+            </code></pre>
+            <p>Регулярные выражения позволяют находить шаблоны в строках и выполнять такие операции, как поиск, замена и разбиение строк.</p>
+        </div>
+
+        <div class="section">
+            <h2>Структуры. Перечисления</h2>
+            <p>Структуры (struct) в C# - это пользовательские типы данных, которые позволяют объединить несколько переменных различных типов под одним именем.</p>
+            <pre><code>
+public struct Point
+{
+    public int X { get; set; }
+    public int Y { get; set; }
+
+    public Point(int x, int y)
+    {
+        X = x;
+        Y = y;
+    }
+}
+            </code></pre>
+            <p>Перечисления (enum) используются для определения набора именованных констант. Это полезно для создания переменных, которые могут принимать одно из нескольких фиксированных значений.</p>
+            <pre><code>
+public enum DaysOfWeek
+{
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+}
+
+class Program
+{
+    static void Main()
+    {
+        DaysOfWeek today = DaysOfWeek.Wednesday;
+        Console.WriteLine("Today is: " + today);
+    }
+}
+            </code></pre>
+        </div>
+
+        <div class="section">
+            <h2>Отношение между классами</h2>
+            <p>Отношения между классами в C# могут быть разных типов: ассоциация, агрегация, композиция и наследование.</p>
+            <ul>
+                <li><strong>Ассоциация:</strong> простое отношение между двумя классами, где один класс использует методы и свойства другого.</li>
+                <pre><code>
+public class Teacher
+{
+    public string Name { get; set; }
+}
+
+public class Course
+{
+    public string CourseName { get; set; }
+    public Teacher Teacher { get; set; } // Ассоциация
+}
+                </code></pre>
+                <li><strong>Агрегация:</strong> слабая форма отношения "часть-целое", где часть может существовать независимо от целого.</li>
+                <pre><code>
+public class Engine
+{
+    public void Start() { Console.WriteLine("Engine started."); }
+}
+
+public class Car
+{
+    public Engine Engine { get; set; } // Агрегация
+
+    public Car(Engine engine)
+    {
+        Engine = engine;
+    }
+}
+                </code></pre>
+                <li><strong>Композиция:</strong> сильная форма отношения "часть-целое", где части не могут существовать отдельно от целого.</li>
+                <pre><code>
+public class Wheel
+{
+    public void Rotate() { Console.WriteLine("Wheel is rotating."); }
+}
+
+public class Bicycle
+{
+    private Wheel frontWheel = new Wheel(); // Композиция
+    private Wheel backWheel = new Wheel();  // Композиция
+
+    public void Ride()
+    {
+        frontWheel.Rotate();
+        backWheel.Rotate();
+        Console.WriteLine("Bicycle is riding.");
+    }
+}
+                </code></pre>
+                <li><strong>Наследование:</strong> отношение, при котором один класс (наследник) наследует свойства и методы другого класса (родителя).</li>
+                <pre><code>
+public class Animal
+{
+    public void Eat() { Console.WriteLine("Eating..."); }
+}
+
+public class Dog : Animal
+{
+    public void Bark() { Console.WriteLine("Barking..."); }
+}
+                </code></pre>
+            </ul>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

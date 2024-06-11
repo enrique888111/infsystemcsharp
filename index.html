@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационная-справочная система для изучения языка программирования C#</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333; 
+            background-image: url('fonsaita.jpg'); 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-attachment: fixed;
+            background-size: cover;
+        }
+
+        header, main, footer {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9); 
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav ul li:last-child {
+            margin-right: 0; 
+        }
+
+        nav ul li a {
+            color: #fff; 
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #ff9100; 
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #0056b3; 
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 23px;
+            color: #fff;
+            background-color: #ff3e3e;
+            border: none;
+            border-radius: 55px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #d10808;
+        }
+
+        .editable-text {
+            border: 1px solid rgba(161, 161, 161, 0.377);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .editable-text:hover {
+            background-color: rgba(160, 160, 160, 0.185);
+        }
+
+        section {
+            background-color: rgba(255, 255, 255, 0.8); 
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            text-align: left; 
+            color: #33333300; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0); 
+        }
+
+        section h2 {
+            color: #333b42; 
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: rgba(255, 255, 255, 0.8); 
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        }
+
+        .emblem {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: 100px;
+            background-image: url('emblema.jpg');
+            background-size: cover;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .form-container {
+            display: none;
+            text-align: left;
+        }
+
+        .form-container.active {
+            display: block;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input[type="text"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form input[type="submit"] {
+            background-color: #ff9100;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #ffa733;
+        }
+
+        .login-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 23px;
+            color: #fff;
+            background-color: #ff7b00;
+            border: none;
+            border-radius: 55px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 5px; 
+        }
+
+        .login-button:hover {
+            background-color: #ffd900;
+        }
+
+        .logout-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 23px;
+            color: #fff;
+            background-color: #ff3e3e;
+            border: none;
+            border-radius: 55px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 5px;
+            display: none; 
+        }
+
+        .logout-button:hover {
+            background-color: #d10808;
+        }
+
+        .user-info {
+            position: fixed;
+            top: 130px;
+            right: 180px;
+            background-color: rgba(255, 52, 52, 0.322);
+            padding: 5px 10px;
+            font-size: 14px;
+            z-index: 999; 
+        }
+
+        @media (max-width: 1200px) {
+            .user-info {
+                right: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header, main, footer {
+                width: 90%;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 5px 0;
+            }
+
+            .user-info {
+                right: 10px;
+            }
+
+            .emblem {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header, main, footer {
+                width: 95%;
+                padding: 15px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .button, .login-button, .logout-button {
+                font-size: 14px;
+                padding: 8px 12px;
+            }
+
+            .user-info {
+                top: 10px;
+                right: 10px;
+                font-size: 12px;
+            }
+
+            .emblem {
+                width: 60px;
+                height: 60px;
+            }
+
+            section {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="userInfo" class="user-info"></div>
+    <div class="emblem"></div>
+    
+    <header>
+        <h1>Информационная-справочная система для изучения языка программирования C#</h1>
+        <nav>
+            <ul>
+                <li><a href="teoriya/indexteoriya.html" class="button">Теория</a></li>
+                <li><a href="testi/indextesti.html" class="button">Тесты</a></li>
+                <li><a href="labi/indexlabi.html" class="button">Лабораторные работы</a></li>
+                <li><a href="indexliteratura.html" class="button">Литература</a></li>
+                <li><a href="login.html" class="login-button">Вход</a></li>
+                <li><a href="#" class="logout-button" onclick="logout()">Выход</a></li> 
+            </ul>
+        </nav>
+    </header>
+    
+    <section style="margin-left: 170px; background-color: transparent;">
+        <img src="fonconteinera.jpg" alt="Фон для контейнера" style="width: 1500px; height: 585px; background-color: transparent; border: none;">
+    </section>
+    
+    <div id="loginForm" class="form-container">
+        <h2>Вход</h2>
+        <form action="/login" method="post" onsubmit="handleLoginFormSubmit(event)">
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="submit" value="Войти">
+        </form>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Информационная-справочная система для изучения языка C#.</p>
+        <p><a href="https://bartc.by">Контакты</a></p>
+    </footer>
+    
+    <script>
+        function handleLoginFormSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const username = form.username.value;
+            const password = form.password.value;
+            const userCount = localStorage.getItem('userCount') || 0;
+            const userId = parseInt(userCount) + 1;
+            saveCredentials(username, password, userId);
+            form.reset();
+            loadAndDisplayUserInfo(); 
+        }
+
+        function saveCredentials(username, password, userId) {
+            localStorage.setItem(`user${userId}_username`, username);
+            localStorage.setItem(`user${userId}_password`, password);
+            localStorage.setItem('userCount', userId);
+        }
+
+        function loadAndDisplayUserInfo() {
+            const { username } = loadCredentials();
+            displayUserInfo(username);
+            localStorage.setItem('currentUser', JSON.stringify({ username })); 
+            updateLoginLogoutButtons(username); 
+        }
+
+        function loadCredentials() {
+            const userCount = parseInt(localStorage.getItem('userCount')) || 0;
+            let username = '';
+            for (let i = 1; i <= userCount; i++) {
+                if (localStorage.getItem(`user${i}_username`)) {
+                    username = localStorage.getItem(`user${i}_username`);
+                    break;
+                }
+            }
+            return { username };
+        }
+
+        function displayUserInfo(username) {
+            const userInfo = document.getElementById('userInfo');
+            if (userInfo) {
+                if (username) {
+                    userInfo.textContent = `Вы вошли под именем: ${username}`;
+                } else {
+                    userInfo.textContent = 'Вы не вошли в систему';
+                }
+            } else {
+                console.error('Элемент userInfo не найден на странице.');
+            }
+        }
+
+        function updateLoginLogoutButtons(username) {
+            const loginButton = document.querySelector('.login-button');
+            const logoutButton = document.querySelector('.logout-button');
+            if (username) {
+                loginButton.style.display = 'none';
+                logoutButton.style.display = 'inline-block';
+            } else {
+                loginButton.style.display = 'inline-block';
+                logoutButton.style.display = 'none';
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('currentUser');
+            displayUserInfo('');
+            updateLoginLogoutButtons(''); 
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userInfo = document.getElementById('userInfo');
+            if (currentUser) {
+                userInfo.textContent = `Вы вошли под именем: ${currentUser.username}`;
+            } else {
+                userInfo.textContent = 'Вы не вошли в систему';
+            }
+            updateLoginLogoutButtons(currentUser ? currentUser.username : ''); 
+        });
+    </script>
+</body>
+</html>

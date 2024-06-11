@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 3</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Файлы. Виды файлов</h2>
+            <p>В C# файлы могут быть использованы для хранения и обмена данными. Существует несколько видов файлов:</p>
+            <ul>
+                <li>Текстовые файлы: хранят данные в текстовом формате и могут быть прочитаны и редактированы с помощью текстовых редакторов.</li>
+                <li>Бинарные файлы: содержат данные в двоичном формате и обычно используются для хранения структурированных данных, таких как изображения, звуковые файлы и т. д.</li>
+                <li>XML-файлы: представляют собой текстовые файлы, которые используются для хранения структурированных данных в формате XML.</li>
+                <li>JSON-файлы: также являются текстовыми файлами и используются для хранения данных в формате JSON.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Файлы и сериализация объектов</h2>
+            <p>Сериализация в C# - это процесс преобразования объекта в поток байтов для его сохранения в файле или передачи по сети. Десериализация - обратный процесс, который восстанавливает объект из потока байтов.</p>
+            <p>Сериализация и десериализация могут использоваться для сохранения и загрузки объектов из файлов. В C# для этого часто используются классы <code>BinaryFormatter</code> для бинарной сериализации и <code>XmlSerializer</code> для сериализации в формате XML.</p>
+            <p>Пример сериализации объекта в бинарный файл:</p>
+            <pre><code>
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+[Serializable]
+class Person
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Person person = new Person { Name = "Alice", Age = 30 };
+
+        BinaryFormatter formatter = new BinaryFormatter();
+        using (FileStream fs = new FileStream("person.bin", FileMode.Create))
+        {
+            formatter.Serialize(fs, person);
+        }
+    }
+}
+            </code></pre>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 3</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Обобщения. Обобщенные классы. Иерархии обобщенных классов</h2>
+            <p>Обобщения (Generics) в C# позволяют создавать классы, структуры, методы и интерфейсы, работающие с различными типами данных без необходимости повторного создания кода.</p>
+            <p>Обобщенные классы могут быть параметризованы типами данных, что делает их более гибкими и универсальными. Использование обобщений позволяет писать более безопасный и эффективный код.</p>
+            <p>Пример обобщенного класса:</p>
+            <pre>
+<code>public class GenericList&lt;T&gt;
+{
+    private List&lt;T&gt; list = new List&lt;T&gt;();
+
+    public void Add(T value)
+    {
+        list.Add(value);
+    }
+
+    public T Get(int index)
+    {
+        return list[index];
+    }
+}</code>
+            </pre>
+            <p>Иерархии обобщенных классов позволяют создавать иерархию классов, используя обобщения. Например:</p>
+            <pre>
+<code>public class MyBaseClass&lt;T&gt;
+{
+    // implementation
+}
+
+public class MyDerivedClass&lt;T&gt; : MyBaseClass&lt;T&gt;
+{
+    // implementation
+}</code>
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>Коллекции. Типы коллекций. Необобщенные коллекции. Обобщенные коллекции</h2>
+            <p>Коллекции в C# представляют собой структуры данных, которые позволяют хранить и управлять группами объектов. Они предоставляют различные способы организации данных для более эффективной работы с ними.</p>
+            <p>В C# существуют различные типы коллекций, включая необобщенные коллекции (например, ArrayList, Hashtable) и обобщенные коллекции (например, List, Dictionary).</p>
+            <p>Пример использования обобщенной коллекции List:</p>
+            <pre>
+<code>List&lt;int&gt; numbers = new List&lt;int&gt;();
+numbers.Add(1);
+numbers.Add(2);
+numbers.Add(3);
+
+foreach (int number in numbers)
+{
+    Console.WriteLine(number);
+}</code>
+            </pre>
+            <p>Обобщенные коллекции предпочтительны, так как они обеспечивают типобезопасность и более высокую производительность по сравнению с необобщенными коллекциями.</p>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

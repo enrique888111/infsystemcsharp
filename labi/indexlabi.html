@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторные работы</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-image: url('fonteoriya.jpg');
+    background-attachment: fixed;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .section {
+            background-color: #ff8800;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .contents {
+    margin-bottom: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contents button {
+    display: block;
+    width: auto;
+    padding: 15px 95px;
+    background-color: #964f4f;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 85px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.contents button:first-child {
+    padding: 10px 50px; 
+    font-size: 30px; 
+    margin-bottom: 50; 
+}
+.contents button:last-child {
+    margin-bottom: 0;
+}
+
+.contents button:hover {
+    background-color: #582e2edc;
+}
+
+
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 20px;
+            background-color: #d40058e3;
+            font-size: 30px; 
+            color: #fff;
+            border: none;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .return-button:hover {
+            background-color: #ff0000d5;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="return-button-container">
+        <button class="return-button" onclick="window.location.href = '../index.html';">Вернуться на главную</button>
+    </div>
+
+    <div class="container">
+        <div class="contents">
+            <button>ЗАДАНИЯ:</button>
+            <button onclick="openNewTab('laba12')">Лабораторная работа 1-2</button>
+            <button onclick="openNewTab('laba3')">Лабораторная работа 3</button>
+            <button onclick="openNewTab('laba4')">Лабораторная работа 4</button>
+            <button onclick="openNewTab('laba5')">Лабораторная работа 5</button>
+            <button onclick="openNewTab('laba6')">Лабораторная работа 6</button>
+            <button onclick="openNewTab('laba7')">Лабораторная работа 7</button>
+            <button onclick="openNewTab('laba8')">Лабораторная работа 8</button>
+            <button onclick="openNewTab('laba9')">Лабораторная работа 9</button>
+            <button onclick="openNewTab('laba10')">Лабораторная работа 10</button>
+        </div>
+    </div>
+
+    </div>
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: "smooth" });
+            }
+        }
+
+        function openNewTab(url) {
+            window.open(url + '.html', '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 4</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Работа с базами данных (ADO.NET)</h2>
+            <p>ADO.NET (ActiveX Data Objects .NET) - это набор библиотек .NET Framework, предназначенных для работы с данными из различных источников данных, включая реляционные базы данных, XML-файлы, сервисы веб-служб и другие.</p>
+            <p>С ADO.NET можно выполнять следующие задачи:</p>
+            <ul>
+                <li>Подключение к базе данных.</li>
+                <li>Выполнение запросов к базе данных.</li>
+                <li>Извлечение данных из базы данных и их обработка.</li>
+                <li>Обновление данных в базе данных.</li>
+                <li>Управление транзакциями.</li>
+            </ul>
+            <p>Пример подключения к базе данных MS SQL Server и выполнения запроса SELECT:</p>
+            <pre>
+<code>using System;
+using System.Data.SqlClient;
+
+class Program
+{
+    static void Main()
+    {
+ string connectionString = "Data Source=myServerAddress;Initial Catalog=myDataBase;
+ User Id=myUsername;Password=myPassword;";
+        
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            
+            string sql = "SELECT Id, Name FROM MyTable";
+            
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        Console.WriteLine($"ID: {reader["Id"]}, Name: {reader["Name"]}");
+                    }
+                }
+            }
+        }
+    }
+}
+</code>
+            </pre>
+            <p>Этот пример подключается к базе данных MS SQL Server, выполняет запрос SELECT и выводит результаты на консоль.</p>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

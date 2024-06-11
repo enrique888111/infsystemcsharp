@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 3</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Принципы работы с XML-данными. Класс XmlDocument. Класс XPathNavigator</h2>
+            <p>XML (eXtensible Markup Language) - это универсальный формат для обмена структурированными данными между различными приложениями. В C# для работы с XML-данными используются классы `XmlDocument` и `XPathNavigator`.</p>
+            <p>Класс `XmlDocument` позволяет загружать, создавать, изменять и сохранять XML-документы.</p>
+            <pre>
+<code>XmlDocument doc = new XmlDocument();
+doc.Load("data.xml");
+
+XmlNodeList nodes = doc.SelectNodes("/root/node");
+foreach (XmlNode node in nodes)
+{
+    Console.WriteLine(node.InnerText);
+}</code>
+            </pre>
+            <p>Класс `XPathNavigator` предоставляет универсальный способ навигации и доступа к XML-данным с использованием языка запросов XPath.</p>
+            <pre>
+<code>XPathDocument doc = new XPathDocument("data.xml");
+XPathNavigator nav = doc.CreateNavigator();
+
+XPathNodeIterator nodes = nav.Select("/root/node");
+while (nodes.MoveNext())
+{
+    Console.WriteLine(nodes.Current.Value);
+}</code>
+            </pre>
+        </div>
+
+        <div class="section">
+            <h2>Основы многопоточного программирования</h2>
+            <p>Многопоточное программирование позволяет выполнять несколько потоков исполнения параллельно, что улучшает производительность и отзывчивость приложений.</p>
+            <p>В C# для работы с потоками исполнения используется класс `Thread`. Потоки позволяют выполнять различные части программы асинхронно.</p>
+            <p>Пример создания и запуска нового потока:</p>
+            <pre>
+<code>void ThreadMethod()
+{
+    // Логика потока
+}
+
+Thread thread = new Thread(ThreadMethod);
+thread.Start();</code>
+            </pre>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

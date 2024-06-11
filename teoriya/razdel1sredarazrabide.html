@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 1</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Введение в IDE</h2>
+            <p>Интегрированная среда разработки (IDE) - это программное обеспечение, которое предоставляет разработчикам все необходимые инструменты для разработки, тестирования и отладки программ. Для языка программирования C# наиболее популярной IDE является Microsoft Visual Studio.</p>
+            <p>Visual Studio предоставляет удобный интерфейс для написания, редактирования и управления кодом. Она включает в себя редактор кода, компилятор, средства отладки и другие инструменты, необходимые для разработки программного обеспечения.</p>
+            <p>Основные преимущества использования IDE включают улучшенную производительность, сокращение времени разработки, улучшение качества кода и легкость управления проектами.</p>
+        </div>
+
+        <div class="section">
+            <h2>Основные функции IDE</h2>
+            <p>IDE предоставляет множество функций, которые упрощают процесс разработки. Рассмотрим некоторые из них на примере Visual Studio:</p>
+            <ul>
+                <li>
+                    <strong>Редактор кода:</strong>
+                    <p>Редактор кода в Visual Studio поддерживает синтаксическое выделение, автоматическое дополнение кода, рефакторинг и подсветку ошибок в реальном времени. Эти функции помогают разработчикам писать более чистый и понятный код.</p>
+                </li>
+                <li>
+                    <strong>Отладка:</strong>
+                    <p>Средства отладки позволяют разработчикам пошагово выполнять код, устанавливать точки останова, отслеживать значения переменных и анализировать выполнение программы. Это помогает быстро находить и исправлять ошибки.</                    <pre>
+<code>public class Program
+{
+    public static void Main(string[] args)
+    {
+        int x = 5;
+        int y = 10;
+        int result = Add(x, y);
+        Console.WriteLine($"Result: {result}");
+    }
+
+    public static int Add(int a, int b)
+    {
+        return a + b; // Точка останова здесь для отладки
+    }
+}</code>
+                    </pre>
+                    </p>
+                </li>
+                <li>
+                    <strong>Управление проектами:</strong>
+                    <p>Visual Studio предоставляет инструменты для управления проектами и решениями, включая поддержку системы контроля версий (например, Git), управление зависимостями и конфигурацию сборки.</p>
+                </li>
+                <li>
+                    <strong>Интеграция с другими инструментами:</strong>
+                    <p>IDE позволяет интегрировать различные инструменты и расширения, такие как системы управления базами данных, инструменты тестирования и другие плагины, которые расширяют функциональность среды разработки.</p>
+                </li>
+                <li>
+                    <strong>Инструменты тестирования:</strong>
+                    <p>Visual Studio включает в себя инструменты для написания и выполнения тестов, такие как модульные тесты и тесты производительности. Это помогает разработчикам гарантировать качество и надежность их кода.</p>
+                </li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

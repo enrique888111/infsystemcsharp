@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 4</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Развертывание Windows-приложений</h2>
+            <p>Развертывание Windows-приложений в C# может быть осуществлено с помощью различных методов и технологий, включая:</p>
+            <ul>
+                <li>Упаковка приложения в исполняемый файл (exe).</li>
+                <li>Создание инсталляторов (MSI, ClickOnce).</li>
+                <li>Использование технологий виртуализации (App-V, Docker).</li>
+                <li>Развертывание приложений в облаке (Azure, AWS).</li>
+                <li>Интеграция с платформами магазинов приложений (Microsoft Store, Steam).</li>
+            </ul>
+            <p>Для развертывания приложений в Windows вы можете использовать инструменты, предоставляемые самой средой разработки (например, Visual Studio), а также сторонние инструменты и службы.</p>
+            <p>Примером может быть использование технологии ClickOnce, которая позволяет автоматически развертывать и обновлять приложения через Интернет:</p>
+            <pre>
+<code>using System;
+using System.Windows.Forms;
+
+namespace MyWinFormsApp
+{
+    static class Program
+    {
+        [STAThread]
+        static void Main()
+        {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new MainForm());
+        }
+    }
+}</code>
+            </pre>
+            <p>ClickOnce также поддерживает автоматическое обновление приложения при запуске, что упрощает процесс поддержки и распространения.</p>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

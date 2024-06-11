@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 3</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Основы параллельного программирования</h2>
+            <p>Параллельное программирование позволяет эффективно использовать мощности многоядерных процессоров для ускорения выполнения задач.</p>
+            <p>В C# для реализации параллельного программирования существует несколько подходов:</p>
+            <ul>
+                <li><strong>Многопоточность:</strong> Использование нескольких потоков для одновременного выполнения различных частей программы.</li>
+                <li><strong>Асинхронное программирование:</strong> Использование асинхронных методов и операций для выполнения задач без блокировки основного потока.</li>
+                <li><strong>Параллельные коллекции:</strong> Специальные коллекции данных, которые позволяют выполнять операции над элементами параллельно.</li>
+                <li><strong>Параллельные запросы LINQ:</strong> Использование параллельной обработки данных при выполнении запросов с помощью LINQ (Language-Integrated Query).</li>
+                <li><strong>Параллельные задачи и планировщик задач:</strong> Использование класса `Task` и планировщика задач для выполнения задач в параллельном режиме.</li>
+            </ul>
+            <p>Пример использования параллельного выполнения с помощью `Parallel.ForEach`:</p>
+            <pre>
+<code>List&lt;int&gt; numbers = Enumerable.Range(1, 1000).ToList();
+Parallel.ForEach(numbers, (number) =>
+{
+    Console.WriteLine($"Number: {number}, Thread ID: {Thread.CurrentThread.ManagedThreadId}");
+});</code>
+            </pre>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>

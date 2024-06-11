@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ce9bff;
+            color: #fff;
+        }
+
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #000000;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #ce9bff;
+            color: #fff;
+            margin-top: 20px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 5px;
+        }
+        .return-button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .return-button {
+            padding: 10px 40px;
+            background-color: #004eb394;
+            color: #ffffff;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .return-button:hover {
+            background-color: #9000a3a6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Раздел 2</h1>
+    </header>
+    <main>
+
+        <div class="section">
+            <h2>Операторы</h2>
+            <p>Операторы в C# используются для выполнения различных операций над данными и переменными. Основные категории операторов включают:</p>
+            <ul>
+                <li>
+                    <strong>Арифметические операторы:</strong>
+                    <p>Используются для выполнения основных математических операций.</p>
+                    <pre><code>
+int a = 5;
+int b = 3;
+int sum = a + b;    // сложение
+int difference = a - b; // вычитание
+int product = a * b; // умножение
+int quotient = a / b; // деление
+int remainder = a % b; // остаток от деления
+                    </code></pre>
+                </li>
+                <li>
+                    <strong>Логические операторы:</strong>
+                    <p>Используются для выполнения логических операций над булевыми значениями.</p>
+                    <pre><code>
+bool x = true;
+bool y = false;
+bool result1 = x && y; // логическое И
+bool result2 = x || y; // логическое ИЛИ
+bool result3 = !x;     // логическое НЕ
+                    </code></pre>
+                </li>
+                <li>
+                    <strong>Операторы сравнения:</strong>
+                    <p>Используются для сравнения значений.</p>
+                    <pre><code>
+int a = 5;
+int b = 3;
+bool isEqual = a == b;    // равно
+bool isNotEqual = a != b; // не равно
+bool isGreater = a > b;   // больше
+bool isLess = a < b;      // меньше
+bool isGreaterOrEqual = a >= b; // больше или равно
+bool isLessOrEqual = a <= b;    // меньше или равно
+                    </code></pre>
+                </li>
+                <li>
+                    <strong>Операторы присваивания:</strong>
+                    <p>Используются для присваивания значений переменным.</p>
+                    <pre><code>
+int a = 5;
+a += 3; // эквивалентно a = a + 3;
+a -= 2; // эквивалентно a = a - 2;
+a *= 4; // эквивалентно a = a * 4;
+a /= 2; // эквивалентно a = a / 2;
+a %= 3; // эквивалентно a = a % 3;
+                    </code></pre>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Процедуры и функции – методы класса. Встроенные методы</h2>
+            <p>Методы в C# представляют собой блоки кода, которые выполняют определенные действия и могут быть вызваны из других частей программы. Методы могут принимать параметры и возвращать значения.</p>
+            <pre><code>
+public class MathOperations
+{
+    // Метод, который не возвращает значение (процедура)
+    public void PrintMessage()
+    {
+        Console.WriteLine("Hello from MathOperations!");
+    }
+
+    // Метод, который принимает параметры и возвращает значение (функция)
+    public int Add(int a, int b)
+    {
+        return a + b;
+    }
+}
+            </code></pre>
+            <p>Встроенные методы — это методы, которые предоставляются стандартными библиотеками C# и .NET. Они включают методы для работы со строками, числами, массивами и другими типами данных.</p>
+            <ul>
+                <li>
+                    <strong>Методы для работы со строками:</strong>
+                    <pre><code>
+string message = "Hello, World!";
+int length = message.Length; // Получить длину строки
+string upperMessage = message.ToUpper(); // Преобразовать строку в верхний регистр
+string lowerMessage = message.ToLower(); // Преобразовать строку в нижний регистр
+bool containsWorld = message.Contains("World"); // Проверить, содержит ли строка подстроку "World"
+                    </code></pre>
+                </li>
+                <li>
+                    <strong>Методы для работы с массивами:</strong>
+                    <pre><code>
+int[] numbers = { 1, 2, 3, 4, 5 };
+Array.Sort(numbers); // Отсортировать массив
+int index = Array.IndexOf(numbers, 3); // Найти индекс элемента со значением 3
+Array.Reverse(numbers); // Обратить порядок элементов в массиве
+                    </code></pre>
+                </li>
+            </ul>
+            <p>Методы являются важной частью программирования на C#, так как они позволяют структурировать код, делают его повторно используемым и легко поддерживаемым.</p>
+        </div>
+
+    </main>
+    <footer>
+        <div class="return-button-container">
+            <button class="return-button" onclick="window.location.href = 'indexteoriya.html'">Вернуться на вкладку "теория"</button>
+        </div>
+    </footer>
+</body>
+</html>
